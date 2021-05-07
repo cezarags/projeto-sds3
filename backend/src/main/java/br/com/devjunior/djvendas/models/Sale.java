@@ -1,12 +1,18 @@
-package models;
+package br.com.devjunior.djvendas.models;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
+@Entity(name = "tb_sales")
 public class Sale {
+	
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY )
 	private Long id;
@@ -14,6 +20,33 @@ public class Sale {
 	private Integer deals;
 	private Double amount;
 	private LocalDateTime date;
+	
+	@ManyToOne
+	@JoinColumn
+	private Seller seller;
+	
+	
+	public Sale() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+	public Sale(Long id, Integer visited, Integer deals, Double amount, LocalDateTime date, Seller seller) {
+	
+		this.id = id;
+		this.visited = visited;
+		this.deals = deals;
+		this.amount = amount;
+		this.date = date;
+		this.seller = seller;
+	}
+
+
+
+
+
+	//get and set
 	public Long getId() {
 		return id;
 	}
@@ -44,6 +77,18 @@ public class Sale {
 	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
+	public Seller getSeller() {
+		return seller;
+	}
+
+
+	public void setSeller(Seller seller) {
+		this.seller = seller;
+	}
+	
+	
+	
+	
 	
 	
 	

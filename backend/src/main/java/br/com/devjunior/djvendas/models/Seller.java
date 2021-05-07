@@ -1,11 +1,18 @@
-package models;
+package br.com.devjunior.djvendas.models;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
-@Entity
+
+
+@Entity(name = "tb_sellers")
 public class Seller {
 	
 	@Id
@@ -13,6 +20,9 @@ public class Seller {
 	private Long id;
 	
 	private String name;
+	
+	@OneToMany(mappedBy = "seller")
+	private List<Sale> sales = new ArrayList<>();
 	
 	
 	
@@ -33,6 +43,12 @@ public class Seller {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public List<Sale> getSales() {
+		return sales;
+	}
+	
+	
 	
 	
 
