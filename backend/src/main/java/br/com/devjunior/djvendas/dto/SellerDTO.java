@@ -1,10 +1,6 @@
-package dto;
+package br.com.devjunior.djvendas.dto;
 
 import java.io.Serializable;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 import br.com.devjunior.djvendas.models.Seller;
 

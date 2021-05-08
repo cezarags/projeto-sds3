@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.devjunior.djvendas.models.Seller;
 import br.com.devjunior.djvendas.repository.SellerRepository;
-import dto.SellerDTO;
+import br.com.devjunior.djvendas.dto.SellerDTO;
 
 @Service
 public class SellerService {

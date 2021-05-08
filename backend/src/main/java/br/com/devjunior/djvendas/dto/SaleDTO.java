@@ -1,4 +1,4 @@
-package dto;
+package br.com.devjunior.djvendas.dto;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

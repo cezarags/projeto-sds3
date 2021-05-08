@@ -9,8 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-@Entity(name = "tb_sales")
+@Entity
+@Table(name = "tb_sales")
 public class Sale {
 	
 	@Id
