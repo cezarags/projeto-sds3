@@ -22,7 +22,7 @@ public interface SaleRepository extends JpaRepository<Sale, Long> {
 			"FROM Sale AS obj GROUP BY obj.seller")
 			List<SaleSumDTO> amountGroupedBySeller();
 	
-	@Query("SELECT new br.com.devjunior.djvendas.dto.SaleSucessDTO(obj.seller, SUM(obj.visited),SUM(obj.deals/obj.visited))" + 
+	@Query("SELECT new br.com.devjunior.djvendas.dto.SaleSucessDTO(obj.seller, SUM(obj.visited),SUM(obj.deals))" + 
 			"FROM Sale AS obj GROUP BY obj.seller")
 			List<SaleSucessDTO> sucessGroupedBySeller();
 }
